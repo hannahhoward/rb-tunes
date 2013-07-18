@@ -16,8 +16,8 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :artist_id %><br />
-    <%= f.number_field :artist_id %>
+    <%= f.label :artist_id, "Artist" %>
+    <%= f.select :artist_id, options_from_collection_for_select(@artists, 'id', 'name') %><br />
   </div>
   <div class="field">
     <%= f.label :album_id %><br />

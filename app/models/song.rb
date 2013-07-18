@@ -1,3 +1,6 @@
 class Song < ActiveRecord::Base
-  attr_accessible :album_id, :artist_id, :title
+  belongs_to :artist
+  belongs_to :album
+
+  attr_accessible :title
 end
