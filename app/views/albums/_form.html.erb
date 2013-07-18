@@ -1,10 +1,10 @@
-<%= form_for(@song) do |f| %>
-  <% if @song.errors.any? %>
+<%= form_for(@album) do |f| %>
+  <% if @album.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@song.errors.count, "error") %> prohibited this song from being saved:</h2>
+      <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
 
       <ul>
-      <% @song.errors.full_messages.each do |msg| %>
+      <% @album.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -12,12 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :artist_id, "Artist" %>
     <%= f.select :artist_id, options_from_collection_for_select(@artists, 'id', 'name') %><br />
+  </div>
+  <div class="field">
+    <%= f.label :platinum %><br />
+    <%= f.check_box :platinum %>
   </div>
   <div class="actions">
     <%= f.submit %>

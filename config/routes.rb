@@ -1,4 +1,12 @@
 RbTunes::Application.routes.draw do
+  get "albums_songs/new"
+
+  get "albums_songs/destroy"
+
+  resources :albums do
+    resources :songs, :only => [:create, :destroy], :controller => 'albums_songs'
+  end
+
   resources :artists
 
 

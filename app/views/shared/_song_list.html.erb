@@ -11,8 +11,8 @@
     <% songs.each do |song| %>
       <tr>
         <td><%= song.title %></td>
-        <td><%= song.artist %></td>
-        <td><%= song.album %></td>
+        <td><%= song.artist.name %></td>
+        <td><%= song.album.name %></td>
       </tr>
     <% end %>
   </tbody>

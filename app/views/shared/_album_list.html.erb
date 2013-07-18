@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Artist</th>
+      <th>Platinum Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @albums.each do |album| %>
+      <tr>
+        <td><%= album.name %></td>
+        <td><%= album.artist.name %></td>
+        <td><%= is_platinum?(album) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

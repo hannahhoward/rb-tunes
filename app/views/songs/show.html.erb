@@ -7,12 +7,12 @@
 
 <p>
   <b>Artist:</b>
-  <%= @song.artist_id %>
+  <%= @song.artist.try(:name) %>
 </p>
 
 <p>
   <b>Album:</b>
-  <%= @song.album_id %>
+  <%= @song.album.try(:name) %>
 </p>
 
 

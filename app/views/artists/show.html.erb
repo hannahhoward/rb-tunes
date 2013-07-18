@@ -10,6 +10,15 @@
   <%= @artist.genre %>
 </p>
 
+<div class="artist-songs">
+  <h3>Songs</h3>
+  <%= render :partial => 'shared/short_song_list', :locals => {:songs => @artist.songs } %>
+</div>
+
+<div class="artist-albums">
+  <h3>Albums</h3>
+  <%= render :partial => 'shared/short_album_list', :locals => {:albums => @artist.albums } %>
+</div>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>

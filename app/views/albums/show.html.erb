@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @album.name %>
+</p>
+
+<p>
+  <b>Artist:</b>
+  <%= @album.artist.try(:name) %>
+</p>
+
+<p>
+  <b>Platinum:</b>
+  <%= is_platinum?(@album) %>
+</p>
+
+
+<table class="table">
+  <tbody>
+    <% @album.songs.each do |song| %>
+      <tr>
+        <td><%= song.title %></td>
+        <td><%= link_to 'Remove from album', album_song_path(@album, song), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_tag album_songs_path(@album) do %>
+  <div class="field">
+    <%= select_tag :song_id, options_from_collection_for_select(@potential_songs, 'id', 'title') %><br />
+    <%= submit_tag 'Add This Song' %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>
