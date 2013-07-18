@@ -1,4 +1,7 @@
 RbTunes::Application.routes.draw do
+  resources :artists
+
+
   get "welcome/index"
 
   resources :songs
