@@ -1,8 +1,8 @@
 class AlbumsSongsController < ApplicationController
 
   def create
-    @song = Song.find(params[:song_id])
-    @album = Album.find(params[:album_id])
+    @song = ## **** FILL ME IN ****
+    @album = ## **** FILL ME IN ****
     @album.songs << @song
     @song.save
 
@@ -13,10 +13,10 @@ class AlbumsSongsController < ApplicationController
   end
 
   def destroy
-    @song = Song.find(params[:id])
+    @song = ## **** FILL ME IN ****
     @song.album = nil
     @song.save
-    @album = Album.find(params[:album_id])
+    @album = ## **** FILL ME IN ****
 
     respond_to do |format|
       format.html { redirect_to album_url(@album) }

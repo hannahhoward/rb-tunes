@@ -1,8 +1,8 @@
 class PlaylistsSongsController < ApplicationController
 
   def create
-    @song = Song.find(params[:song_id])
-    @playlist = Playlist.find(params[:playlist_id])
+    @song = ## **** FILL ME IN ****
+    @playlist = ## **** FILL ME IN ****
     @playlist.songs << @song
     @playlist.save
 
@@ -13,8 +13,8 @@ class PlaylistsSongsController < ApplicationController
   end
 
   def destroy
-    @song = Song.find(params[:id])
-    @playlist = Playlist.find(params[:playlist_id])
+    @song = ## **** FILL ME IN ****
+    @playlist = ## **** FILL ME IN ****
     @playlist.songs.delete(@song)
 
     respond_to do |format|

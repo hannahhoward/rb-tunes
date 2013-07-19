@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all
+    @albums = ## **** FILL ME IN ****
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,8 +13,8 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
-    @album = Album.find(params[:id])
-    @potential_songs = Song.where(:artist_id => @album.artist.id)
+    @album = ## **** FILL ME IN ****
+    @potential_songs = ## **** FILL ME IN ****
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,7 +26,7 @@ class AlbumsController < ApplicationController
   # GET /albums/new.json
   def new
     @album = Album.new
-    @artists = Artist.all
+    @artists = ## **** FILL ME IN ****
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,7 +43,7 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
-    @album = Album.new(params[:album])
+    @album = ## **** FILL ME IN ****
 
     respond_to do |format|
       if @album.save
@@ -59,7 +59,7 @@ class AlbumsController < ApplicationController
   # PUT /albums/1
   # PUT /albums/1.json
   def update
-    @album = Album.find(params[:id])
+    @album = ## **** FILL ME IN ****
 
     respond_to do |format|
       if @album.update_attributes(params[:album])
@@ -75,7 +75,7 @@ class AlbumsController < ApplicationController
   # DELETE /albums/1
   # DELETE /albums/1.json
   def destroy
-    @album = Album.find(params[:id])
+    @album = ## **** FILL ME IN ****
     @album.destroy
 
     respond_to do |format|
