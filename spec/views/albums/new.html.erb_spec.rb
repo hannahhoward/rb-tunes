@@ -6,6 +6,16 @@ describe "albums/new" do
       :name => "MyString",
       :platinum => false
     ).as_new_record)
+    assign(:artists, [
+      stub_model(Artist,
+        :name => "Name",
+        :genre => "Genre"
+      ),
+      stub_model(Artist,
+        :name => "Name",
+        :genre => "Genre"
+      )
+    ])
   end
 
   it "renders new album form" do

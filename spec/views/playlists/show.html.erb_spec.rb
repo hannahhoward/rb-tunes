@@ -1,10 +1,9 @@
 require 'spec_helper'
 
-describe "albums/show" do
+describe "playlists/show" do
   before(:each) do
-    @album = assign(:album, stub_model(Album,
-      :name => "Name",
-      :platinum => false
+    @playlist = assign(:playlist, stub_model(Playlist,
+      :name => "Name"
     ))
     @potential_songs = assign(:potential_songs, [
       stub_model(Song,
@@ -20,6 +19,5 @@ describe "albums/show" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Name/)
-    rendered.should match(/No/)
   end
 end

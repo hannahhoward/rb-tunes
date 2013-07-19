@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @playlist.name %>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Album</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @playlist.songs.each do |song| %>
+      <tr>
+        <td><%= song.title %></td>
+        <td><%= song.artist.name %></td>
+        <td><%= song.album.name %></td>
+        <td><%= link_to 'Remove from album', playlist_song_path(@playlist, song), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_tag playlist_songs_path(@playlist) do %>
+  <div class="field">
+    <%= select_tag :song_id, options_from_collection_for_select(@potential_songs, 'id', 'title') %><br />
+    <%= submit_tag 'Add This Song' %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_playlist_path(@playlist) %> |
+<%= link_to 'Back', playlists_path %>

@@ -6,6 +6,9 @@ describe "albums/edit" do
       :name => "MyString",
       :platinum => false
     ))
+    @artists = assign(:artists, [stub_model(Artist,
+      :name => "Prince",
+      :genre => "Genre")])
   end
 
   it "renders the edit album form" do
